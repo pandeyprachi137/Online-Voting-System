@@ -33,7 +33,6 @@
                 </div>
                 <button type="submit" class="btn btn-dark my-4 ">Login</button>
                 <p>Don't have an account? <a href="./partials/registration.php" class="text-white">Register here</a></p>
-                
             </form>
         </div>
     </div>
