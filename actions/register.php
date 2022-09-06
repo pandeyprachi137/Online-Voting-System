@@ -30,12 +30,12 @@ else{
             }
         }
     }
-    $sql="insert into `userData` (username,mobile,password,photo,standard,status,votes) values ('$username','$mobile','$password','$image','$std',0,0)";
+    $sql="insert into `userData` (username,mobile,password,photo,standard,status,votes) values ('$username','$mobile','$password','$fileName','$std',0,0)";
 
     $result=mysqli_query($con,$sql);
 
     if($result){
-        move_uploaded_file($_FILES['photo']['tmp_name'],"../uploads/".$image);
+        move_uploaded_file($fileTmpName,$fileDest);
         echo '<script>
     alert("Registration successfull");
     window.location="../";
