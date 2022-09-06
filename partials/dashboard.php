@@ -8,7 +8,9 @@ if($_SESSION['status']==1){
     
     $status='<b class="text-success">voted</b>';
 }else{
-    echo $data['photo'];
+    ?>
+    <img src=" <?php echo $data['photo'];?>" alt="new-img">
+    <?php
     $status='<b class="text-danger">Not voted</b>';
 }
 ?>
@@ -85,7 +87,7 @@ if($_SESSION['status']==1){
         </div>
         <!-- user profile -->
         <div class="col-md-5">
-        <img src="../uploads/<?php  echo $data['photo'] ?>"alt="user image">
+        <img src=" <?php echo $data['photo']; ?>" alt="user-image">
             <br>
             <br>
             <strong class="text-dark h5">Name: </strong>

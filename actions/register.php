@@ -11,9 +11,6 @@ $filetmp=$files['tmp_name'];
 $fileext=explode('.',$filename);
 $filecheck=strtolower(end($fileext));
 $fileextstored=array('png','jpg','jpeg');
-if(in_array($filecheck,$fileextstored)){
-    $destinationfile='uploads/'.$filename;
-}
 $std=$_POST['std'];
 
 if($password!=$cpassword){
@@ -23,6 +20,9 @@ if($password!=$cpassword){
     </script>';
 }
 else{
+    if(in_array($filecheck,$fileextstored)){
+        $destinationfile='uploads/'.$filename;
+    }
     $sql="insert into `userData` (username,mobile,password,photo,standard,status,votes) values ('$username','$mobile','$password','$destinationfile','$std',0,0)";
 
     $result=mysqli_query($con,$sql);
