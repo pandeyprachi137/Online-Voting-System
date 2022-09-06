@@ -6,7 +6,10 @@ $password=$_POST['password'];
 $cpassword=$_POST['cpassword'];
 $file=$_FILES['photo'];
 $fileName=$_FILES['photo']['name'];
-
+$fileTmpName=$_FILES['photo']['tmp_name'];
+$fileSize=$_FILES['photo']['size'];
+$fileName=$_FILES['photo']['name'];
+$fileName=$_FILES['photo']['name'];
 $std=$_POST['std'];
 
 if($password!=$cpassword){
