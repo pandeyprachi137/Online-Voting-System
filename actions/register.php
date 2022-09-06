@@ -26,7 +26,7 @@ else{
         if($fileError===0){
             if($fileSize<10000000){
                 $fileNameNew=uniqid('',true).".".$fileActualExt;
-                $fileDest=
+                $fileDest='uploads/'.$fileNameNew;
             }
         }
     }
