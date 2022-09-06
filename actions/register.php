@@ -22,7 +22,14 @@ if($password!=$cpassword){
     </script>';
 }
 else{
-
+    if(in_array($fileActualExt,$allow)){
+        if($fileError===0){
+            if($fileSize<10000000){
+                $fileNameNew=uniqid('',true).".".$fileActualExt;
+                $fileDest=
+            }
+        }
+    }
     $sql="insert into `userData` (username,mobile,password,photo,standard,status,votes) values ('$username','$mobile','$password','$image','$std',0,0)";
 
     $result=mysqli_query($con,$sql);
