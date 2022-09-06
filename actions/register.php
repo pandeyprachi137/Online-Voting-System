@@ -10,6 +10,9 @@ $fileTmpName=$_FILES['photo']['tmp_name'];
 $fileSize=$_FILES['photo']['size'];
 $fileError=$_FILES['photo']['error'];
 $fileType=$_FILES['photo']['type'];
+$fileExt=explode('.',$fileName);
+$fileActualExt=strtolower(end($fileExt));
+$allow=array('jpeg','jpg','png');
 $std=$_POST['std'];
 
 if($password!=$cpassword){
