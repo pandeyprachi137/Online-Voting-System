@@ -4,7 +4,9 @@ $username=$_POST['username'];
 $mobile=$_POST['mobile'];
 $password=$_POST['password'];
 $cpassword=$_POST['cpassword'];
-$image=$_FILES['photo']['name'];
+$file=$_FILES['photo'];
+$fileName=$_FILES['photo']['name'];
+
 $std=$_POST['std'];
 
 if($password!=$cpassword){
