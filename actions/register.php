@@ -8,8 +8,8 @@ $file=$_FILES['photo'];
 $fileName=$_FILES['photo']['name'];
 $fileTmpName=$_FILES['photo']['tmp_name'];
 $fileSize=$_FILES['photo']['size'];
-$fileName=$_FILES['photo']['name'];
-$fileName=$_FILES['photo']['name'];
+$fileError=$_FILES['photo']['error'];
+$fileType=$_FILES['photo']['type'];
 $std=$_POST['std'];
 
 if($password!=$cpassword){
