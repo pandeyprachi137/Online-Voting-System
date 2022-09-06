@@ -4,15 +4,16 @@ $username=$_POST['username'];
 $mobile=$_POST['mobile'];
 $password=$_POST['password'];
 $cpassword=$_POST['cpassword'];
-$file=$_FILES['photo'];
-$fileName=$_FILES['photo']['name'];
-$fileTmpName=$_FILES['photo']['tmp_name'];
-$fileSize=$_FILES['photo']['size'];
-$fileError=$_FILES['photo']['error'];
-$fileType=$_FILES['photo']['type'];
-$fileExt=explode('.',$fileName);
-$fileActualExt=strtolower(end($fileExt));
-$allow=array('jpeg','jpg','png');
+$files=$_FILES['photo'];
+$filename=$files['name'];
+$fileerror=$files['error'];
+$filetmp=$files['tmp_name'];
+$fileext=explode('.',$filename);
+$filecheck=strtolower(end($fileext));
+$fileextstored=array('png','jpg','jpeg');
+if(in_array($filecheck,$fileextstored)){
+    $destinationfile='uploads/'.$filename;
+}
 $std=$_POST['std'];
 
 if($password!=$cpassword){
@@ -30,12 +31,12 @@ else{
             }
         }
     }
-    $sql="insert into `userData` (username,mobile,password,photo,standard,status,votes) values ('$username','$mobile','$password','$fileName','$std',0,0)";
+    $sql="insert into `userData` (username,mobile,password,photo,standard,status,votes) values ('$username','$mobile','$password','$fileDest','$std',0,0)";
 
     $result=mysqli_query($con,$sql);
 
     if($result){
-        move_uploaded_file($fileTmpName,$fileDest);
+        move_uploaded_file($filetmp,$destinationfile);
         echo '<script>
     alert("Registration successfull");
     window.location="../";
