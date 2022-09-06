@@ -8,7 +8,7 @@ if($_SESSION['status']==1){
     
     $status='<b class="text-success">voted</b>';
 }else{
-    
+    echo $data['photo'];
     $status='<b class="text-danger">Not voted</b>';
 }
 ?>
